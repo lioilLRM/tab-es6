@@ -1,0 +1,45 @@
+.tabs{
+  width:500px;
+  height: 500px;
+  background: #fff;
+  margin: 50px;
+  border: 1px solid black;
+}
+
+.tabs .nav {
+  height:50px;
+  border-bottom: 1px solid #000;
+}
+
+.tabs .nav-item {
+  float: left;
+  width: 33.3%;
+  text-align: center;
+  height:50px;
+  line-height: 50px;
+}
+.tabs .nav-item.active {
+  background-color: #000;
+  color: #fff;
+}
+
+.tabs .page{
+  position: relative;
+  height: 450px;
+}
+
+.tabs .page-item {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: none;
+  height: 100%;
+  width: 100%;
+  line-height: 450px;
+  text-align: center;
+  font-size: 100px;
+}
+
+.tabs .page-item.active {
+  display: block;
+}

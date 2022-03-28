@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>tabs ES5版本</title>
+  <link href="css/index.css" rel="stylesheet" type="text/css"></link>
+</head>
+<body>
+    <div class="tabs J_tabs">
+        <div class="nav">
+          <div class="nav-item active">选项1</div>
+          <div class="nav-item">选项2</div>
+          <div class="nav-item">选项3</div>
+        </div>
+
+        <div class="page">
+          <div class="page-item active">页面1</div>
+          <div class="page-item">页面2</div>
+          <div class="page-item">页面3</div>
+        </div>
+    </div>
+    <script src="./js/index.js"></script>
+    <script>
+      let tab = new Tab({
+        el: '.J_tabs'
+      })
+      tab.init()
+    </script>
+</body>
+</html>

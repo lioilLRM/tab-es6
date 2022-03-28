@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>tabs ES5版本</title>
+  <link href="css/index.css" rel="stylesheet" type="text/css"></link>
+</head>
+<body>
+    <div class="tabs J_tabs">
+      <!-- 所有内容由JS动态生成 -->
+    </div>
+
+    <script type="text/html" id="J_navItemTpl">
+      <div class="{{navStyleClass}}">{{navItemTitle}}</div>
+    </script>
+
+    <script type="text/html" id="J_pageItemTpl">
+      <div class="{{pageStyleClass}}">
+        <h1>{{cityName}}</h1>
+        <div><img src="{{img}}" alt="{{cityName}}"></div>
+      </div>
+    </script>
+
+    <div id="J_cityData" style="display:none;">
+      [
+          {
+              "id": "1",
+              "city_name": "北京",
+              "intro": "北京市，老北儿京儿",
+              "img":"https://img2.baidu.com/it/u=307031842,1792499848&fm=26&fmt=auto&gp=0.jpg"
+          },
+          {
+              "id": "2",
+              "city_name": "上海",
+              "intro": "米哈游，原批",
+              "img":"https://img0.baidu.com/it/u=4074214904,917673443&fm=26&fmt=auto&gp=0.jpg"
+          },
+          {
+              "id": "3",
+              "city_name": "杭州",
+              "intro": "西湖啊西湖",
+              "img":"https://img1.baidu.com/it/u=1398046581,60479236&fm=26&fmt=auto&gp=0.jpg"
+          }
+       ]
+    </div>
+
+    <script src="./js/index.js"></script>
+    <script>
+      let tab = new Tab({
+        el: '.J_tabs'
+      })
+      tab.init()
+    </script>
+</body>
+</html>
+
+  cat
+<div class="cat1">2</div>
+acat2
