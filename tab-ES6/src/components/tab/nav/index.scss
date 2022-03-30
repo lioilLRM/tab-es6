@@ -1,0 +1,17 @@
+.nav {
+  height:50px;
+  border-bottom: 1px solid #000;
+}
+
+.nav-item {
+  float: left;
+  width: 33.3%;
+  text-align: center;
+  height:50px;
+  line-height: 50px;
+}
+
+.nav-item.active {
+  background-color: #000;
+  color: #fff;
+}

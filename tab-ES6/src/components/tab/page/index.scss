@@ -1,0 +1,25 @@
+.page{
+  position: relative;
+  height: 450px;
+  overflow: auto;
+}
+
+.page-item {
+  position: absolute;
+  left: 0;
+  top: 0;
+  // display: none;
+  height: 100%;
+  width: 85%;
+  text-align: center;
+  font-size: 28px;
+  padding: 0 20px;
+
+}
+
+.page-item.active {
+  display: block;
+}
+.page-item p{
+  font-size: 14px;
+}
