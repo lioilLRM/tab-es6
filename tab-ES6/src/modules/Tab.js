@@ -12,6 +12,9 @@ export default class Tab {
     this.navComponent = nav()
     this.pageComponent = page()
     this.activeIndex = 0
+
+    this.pageHTMLCache = {}
+
   }
 
   init() {
@@ -26,12 +29,13 @@ export default class Tab {
     console.log(`nav：`,nav().tpl(cityData));
     let oNav =  this.navComponent.tpl(cityData);
     // let oPage = this.pageComponent.tpl(cityData);
-    let oPage = this.pageComponent.tpl(cityData[this.activeIndex])
-    console.log(`oPage：`,oPage);
+    let pageTpl = this.pageComponent.tpl(cityData[this.activeIndex])
+    this.pageHTMLCache[this.activeIndex] = pageTpl.pageHTML
+    console.log(`oPage：`,pageTpl);
     
     let oFrag = document.createDocumentFragment()
     oFrag.appendChild(oNav)
-    oFrag.appendChild(oPage);
+    oFrag.appendChild(pageTpl.oPage);
 
     this.oTab.appendChild(oFrag)
     this.app.appendChild(this.oTab)
@@ -61,8 +65,21 @@ export default class Tab {
       this.activeIndex = [].indexOf.call(this.oNavItems,tar)
       this.oNavItems[this.activeIndex].className+= ' active'
 
-      this.oPage.innerHTML = this.pageComponent.renderPage(cityData[this.activeIndex])
+      // this.oPage.innerHTML = this.pageComponent.renderPage(cityData[this.activeIndex])
+      this.oPage.innerHTML = this.renderPageHTML(cityData, this.activeIndex)
 
+    }
+
+    renderPageHTML(data, index) {
+      if(!this.pageHTMLCache[index]) {
+        this.pageHTMLCache[index] = this.pageComponent.renderPage(data[index])
+        console.log(`new page：`);
+
+      } else {
+        console.log(`from cache：`);
+        
+      }
+      return this.pageHTMLCache[index]
     }
 
 }

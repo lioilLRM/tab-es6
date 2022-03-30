@@ -6,7 +6,8 @@ export default ()=> {
   return {
     name: 'page',
     tpl(dataItem) {
-      const oPage = document.createElement('div')
+      const oPage = document.createElement('div'),
+                pageHTML = this.renderPage(dataItem);
       oPage.className = 'page'
 
       // let list = ''
@@ -24,7 +25,10 @@ export default ()=> {
 
       oPage.innerHTML = this.renderPage(dataItem)
 
-      return oPage
+      return {
+        oPage,
+        pageHTML
+      }
 
     },
     // 渲染页面提取到函数
