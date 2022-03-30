@@ -13,5 +13,5 @@
 
 
 ## tab ES6项目运行
-npm i
+npm i  
 npm run dev
